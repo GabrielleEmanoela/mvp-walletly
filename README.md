@@ -1,97 +1,120 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🚀 Bem-vindo ao **Walletly**
 
-# Getting Started
+**Walletly** é um aplicativo mobile para visualização de saldo, histórico de transações e autenticação segura via PIN e biometria.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🔧 Como iniciar o projeto
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 1. Configuração do IP
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Altere o IP local no arquivo `src/lib/axios.ts` para o IP da sua máquina onde o servidor mock vai rodar.
 
-```sh
-# Using npm
-npm start
+### 2. Mock Server
 
-# OR using Yarn
-yarn start
+No seu terminal, execute:
+
+```bash
+yarn start:mock
 ```
 
-## Step 2: Build and run your app
+O mock server estará disponível em http://localhost:3000.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### 3. Instalação e Execução
 
-### Android
+Em outro terminal, instale as dependências com o comando:
 
-```sh
-# Using npm
-npm run android
+```bash
+yarn
+```
 
-# OR using Yarn
+Para rodar a aplicação:
+
+```bash
+# iOS
+
+cd ios && pod install
+
+yarn ios
+
+# Android
 yarn android
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 📱 Sobre o Projeto
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- 🔐 **PIN Seguro:** Criação e armazenamento de PIN usando Keychain com biometria integrada.
+- 👤 **Autenticação Biométrica:** Login via Face ID ou Touch ID.
+- 🧭 **Navegação Segura:** Separação entre rotas públicas e privadas.
+- 🌐 **Internacionalização:** Ponte ajustada para busca de idioma do dispositivo, via módulo nativo.
+- 💾 **Estado Global com Redux Toolkit mais persistência com MMKV:** Armazenamento local rápido e confiável com redux toolkit mais persist.
+- 📊 **Tracking com Mixpanel:** : Trackeamento de evento de visualização e de cliques.
+- 📦 **Componentes Reutilizáveis:** Componentes genéricos para consistência visual e de comportamento.
+- 🧪 **Testes Unitários:** Escritas de alguns testes de unidade com Jest.
 
-```sh
-bundle install
+---
+
+## 📂 Estrutura de Pastas
+
+```
+/src
+  ├── components/              # Componentes reutilizáveis
+  ├── hooks/                   # Custom Hooks (useAuth, trackerScreen etc.)
+  ├── lib/                     # Bibliotecas nativas e integrações externas
+  │   ├── axios/               # Configuração base do axios
+  │   ├── mixpanel/            # Wrapper das funções do Mixpanel
+  │   ├── deviceInfo/          # Wrapper das funções do device info
+  │   ├── locale/              # Locale nativo do sistema
+  │   └── keychain/            # Wrapper das funções de autenticação biométrica e PIN
+  ├── navigation/              # Gerenciamento de navegação pública e privada
+  │   ├── private.navigator.tsx
+  │   └── public.navigator.tsx
+      └── splash.navigator.tsx
+  |
+  ├── redux/                   # Redux Toolkit + persistência com MMKV
+  │   ├── modules/             # Slices de estado (auth, balance, user etc.)
+  │   ├── store.ts             # Store principal
+  │   └── storage.ts           # configuração do redux-persist com MMKV
+  ├── services/                # Requisições HTTP (axios)
+  │   ├── auth.service.ts      # Serviço de comunicação com os endpoints de Autenticação
+  │   └── home.service.ts      # Serviço de comunicação com os endpoints da Home do App
+  ├── themes/                  # Paleta de cores e tema da aplicação
+  ├── types/                   # Tipagens globais TypeScript
+  ├── view/                    # Telas da aplicação
+  │   ├── Home/
+  │   ├── Onboarding/
+  │   ├── TransactionDetails/
+  │   └── Auth/
+  ├── App.tsx                  # Entry point principal
+
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 🛠 Tecnologias utilizadas
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- React Native
+- TypeScript
+- Redux Toolkit
+- MMKV
+- Mixpanel
+- react-native-keychain
+- i18n (internacionalização)
+- Axios
+- Jest + Testing Library
+- json-server (mock de API)
+- React Hook Form (com Yup)
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 📌 Observações
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Pontos de melhoria: aprimorar a componentização para que os componentes tenham responsabilidades bem definidas, expandir e melhorar os testes, e aprimorar a visualização do tipo de linguagem do dispositivo.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## Eventos coletados pelo Mixpanel
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![Fluxo de eventos Mixpanel](src/assets/mixpanel.png)

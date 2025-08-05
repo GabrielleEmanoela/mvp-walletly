@@ -1,0 +1,323 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Gabrielle Emanoela",
+    "email": "gabrielle@email.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30"
+  },
+  "balance": {
+    "currency": "R$",
+    "balance": "2.930,00",
+    "sessionExpiration": true
+  },
+  "transactions-history": [
+    {
+      "id": "txn_001",
+      "date": "2024-10-25T10:15:00Z",
+      "type": "deposit",
+      "amount": 100.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Salary deposit"
+    },
+    {
+      "id": "txn_002",
+      "date": "2024-10-26T14:25:00Z",
+      "type": "withdrawal",
+      "amount": 50.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "ATM withdrawal"
+    },
+    {
+      "id": "txn_003",
+      "date": "2024-10-27T09:45:00Z",
+      "type": "transfer",
+      "amount": 150.0,
+      "currency": "R$",
+      "status": "pending",
+      "description": "Transfer to Jane Smith"
+    },
+    {
+      "id": "txn_004",
+      "date": "2024-10-28T12:00:00Z",
+      "type": "deposit",
+      "amount": 200.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Freelance payment"
+    },
+    {
+      "id": "txn_005",
+      "date": "2024-10-29T08:30:00Z",
+      "type": "payment",
+      "amount": 75.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Subscription payment",
+      "creditCard": {
+        "number": "4539876543211234",
+        "brand": "VISA"
+      }
+    },
+    {
+      "id": "txn_006",
+      "date": "2024-10-30T14:40:00Z",
+      "type": "transfer",
+      "amount": 120.0,
+      "currency": "R$",
+      "status": "failed",
+      "description": "Transfer to Mark Green"
+    },
+    {
+      "id": "txn_007",
+      "date": "2024-11-01T11:20:00Z",
+      "type": "withdrawal",
+      "amount": 40.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Cash withdrawal"
+    },
+    {
+      "id": "txn_008",
+      "date": "2024-11-02T15:10:00Z",
+      "type": "deposit",
+      "amount": 300.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Bonus payment"
+    },
+    {
+      "id": "txn_009",
+      "date": "2024-11-03T17:30:00Z",
+      "type": "payment",
+      "amount": 90.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Electricity bill",
+      "creditCard": {
+        "number": "5409876543219876",
+        "brand": "Mastercard"
+      }
+    },
+    {
+      "id": "txn_010",
+      "date": "2024-11-04T13:00:00Z",
+      "type": "transfer",
+      "amount": 200.0,
+      "currency": "R$",
+      "status": "pending",
+      "description": "Transfer to Sarah Brown"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_001",
+      "date": "2024-10-25T10:15:00Z",
+      "type": "deposit",
+      "amount": 100.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Salary deposit",
+      "fromAccount": {
+        "name": "Company Inc",
+        "accountNumber": "ACC000123456"
+      },
+      "toAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "fee": 0.0,
+      "iconColor": "#1976D2",
+      "icon": "bank"
+    },
+    {
+      "id": "txn_002",
+      "date": "2024-10-26T14:25:00Z",
+      "type": "withdrawal",
+      "amount": 50.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "ATM withdrawal",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "ATM Operator",
+        "accountNumber": "ATM123"
+      },
+      "fee": 1.0,
+      "iconColor": "#D32F2F",
+      "icon": "atm"
+    },
+    {
+      "id": "txn_003",
+      "date": "2024-10-27T09:45:00Z",
+      "type": "transfer",
+      "amount": 150.0,
+      "currency": "R$",
+      "status": "pending",
+      "description": "Transfer to Jane Smith",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "Jane Smith",
+        "accountNumber": "ACC987654321"
+      },
+      "fee": 2.0,
+      "iconColor": "#388E3C",
+      "icon": "transfer"
+    },
+    {
+      "id": "txn_004",
+      "date": "2024-10-28T12:00:00Z",
+      "type": "deposit",
+      "amount": 200.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Freelance payment",
+      "fromAccount": {
+        "name": "Client",
+        "accountNumber": "ACC444555666"
+      },
+      "toAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "fee": 0.0,
+      "iconColor": "#1976D2",
+      "icon": "bank"
+    },
+    {
+      "id": "txn_005",
+      "date": "2024-10-29T08:30:00Z",
+      "type": "payment",
+      "amount": 75.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Subscription payment",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "Streaming Service",
+        "accountNumber": "ACC777888999"
+      },
+      "fee": 1.5,
+      "creditCard": {
+        "number": "4539876543211234",
+        "brand": "VISA"
+      },
+      "iconColor": "#FBC02D",
+      "icon": "credit-card"
+    },
+    {
+      "id": "txn_006",
+      "date": "2024-10-30T14:40:00Z",
+      "type": "transfer",
+      "amount": 120.0,
+      "currency": "R$",
+      "status": "failed",
+      "description": "Transfer to Mark Green",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "Mark Green",
+        "accountNumber": "ACC555666777"
+      },
+      "fee": 0.0,
+      "iconColor": "#388E3C",
+      "icon": "transfer"
+    },
+    {
+      "id": "txn_007",
+      "date": "2024-11-01T11:20:00Z",
+      "type": "withdrawal",
+      "amount": 40.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Cash withdrawal",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "ATM Operator",
+        "accountNumber": "ATM123"
+      },
+      "fee": 1.0,
+      "iconColor": "#D32F2F",
+      "icon": "atm"
+    },
+    {
+      "id": "txn_008",
+      "date": "2024-11-02T15:10:00Z",
+      "type": "deposit",
+      "amount": 300.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Bonus payment",
+      "fromAccount": {
+        "name": "Employer Inc",
+        "accountNumber": "ACC888999000"
+      },
+      "toAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "fee": 0.0,
+      "iconColor": "#1976D2",
+      "icon": "bank"
+    },
+    {
+      "id": "txn_009",
+      "date": "2024-11-03T17:30:00Z",
+      "type": "payment",
+      "amount": 90.0,
+      "currency": "R$",
+      "status": "completed",
+      "description": "Electricity bill",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "Electric Company",
+        "accountNumber": "ACC111222333"
+      },
+      "fee": 1.75,
+      "creditCard": {
+        "number": "5409876543219876",
+        "brand": "Mastercard"
+      },
+      "iconColor": "#FBC02D",
+      "icon": "credit-card"
+    },
+    {
+      "id": "txn_010",
+      "date": "2024-11-04T13:00:00Z",
+      "type": "transfer",
+      "amount": 200.0,
+      "currency": "R$",
+      "status": "pending",
+      "description": "Transfer to Sarah Brown",
+      "fromAccount": {
+        "name": "John Doe",
+        "accountNumber": "ACC123456789"
+      },
+      "toAccount": {
+        "name": "Sarah Brown",
+        "accountNumber": "ACC222333444"
+      },
+      "fee": 2.5,
+      "iconColor": "#388E3C",
+      "icon": "transfer"
+    }
+  ]
+}
